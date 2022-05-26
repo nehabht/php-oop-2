@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . "/Models/User.php";
+
 class User {
     
     public $userID;
@@ -16,4 +18,16 @@ class User {
         $this->registred = $registred;
     }
 
+
+    public function discountOption($registred){
+        if($registred == "yes"){
+            return 'applica sconto del 20%';
+        }
+        
+    }
+
+    
+
 }
+
+

@@ -6,24 +6,32 @@ class User {
     public $userID;
     public $email;
     public $cardNumber;
-    public $registred;
+    //public $registred;
+    //public $notRegistred;
+    //public $discount;
 
 
-    public function __construct($userID, $email, $cardNumber, $registred){
+    public function __construct($userID, $email, $cardNumber ){
 
         $this->userID = $userID;
         $this->email = $email;
         $this->cardNumber = $cardNumber;
-        $this->registred = $registred;
+
     }
 
 
     public function discountOption($registred){
-        if($registred == "yes"){
-            return 'applica sconto del 20%';
+        if($registred == true){
+            $this->registred = true;
+            $this->discount = 0.2;
+            return 'possibile fare lo sconto del 20% ' . $this->discount;
+        }else{
+            $this->notRegistred = false;
+            //$this->discount = 0;
+            return "non è possibile uno sconto";
         }
-        
     }
+
 
     
 
